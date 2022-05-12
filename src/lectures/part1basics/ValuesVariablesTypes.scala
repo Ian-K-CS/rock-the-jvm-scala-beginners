@@ -8,7 +8,7 @@ object ValuesVariablesTypes extends App {
   // More as an intermediate computations to later use in bigger computations.
 
 
-  val y = 45 // Compiler can infer types. IE, it knows 45 is an Int - so you don't explicity have to say what type the value is.
+  val y = 45 // Compiler can infer types. IE, it knows 45 is an Int - so you don't explicitly have to say what type the value is.
   println(y)
 
 
@@ -31,8 +31,8 @@ object ValuesVariablesTypes extends App {
   println(aChar)
 
 
-  // An integer - integers have a range of -2^31 to 2^31-1 (-2,147,483,648 to 2,147,483,648) (4 bytes)
-  val anInt: Int = 10
+  // An integer - integers have a range of -2^31 to 2^31-1 (-2,147,483,647 to 2,147,483,647) (4 bytes)
+  val anInt: Int = 2147483647
   println(anInt)
 
 
@@ -41,8 +41,10 @@ object ValuesVariablesTypes extends App {
   println(aShort)
 
 
-  // A Long - longs have a range of -2^63 to 2^63-1 (-9,223,372,036,854,775,808 to 9,223,372,036,854,775,808) (8 bytes)
-  val aLong: Long =
+  // A Long - longs have a range of -2^63 to 2^63-1 (-9,223,372,036,854,775,807 to 9,223,372,036,854,775,807) (8 bytes)
+  val aLong: Long = 9223372036854775807L
+  println(aLong)
+
 
 
 }
