@@ -8,10 +8,8 @@ object ValuesVariablesTypes extends App {
   // More as an intermediate computations to later use in bigger computations.
 
 
-
-  val y = 45 // Compiler can infer types. IE, it knows 45 is an Int.
+  val y = 45 // Compiler can infer types. IE, it knows 45 is an Int - so you don't explicity have to say what type the value is.
   println(y)
-
 
 
   // String type
@@ -19,6 +17,7 @@ object ValuesVariablesTypes extends App {
   val anotherString: String = "goodbye"
   println(aString)
   println(anotherString)
+
 
   // Boolean type
   val aBoolean: Boolean = true
@@ -31,8 +30,15 @@ object ValuesVariablesTypes extends App {
   val aChar: Char = 'a'
   println(aChar)
 
+
   // An integer
   val anInt: Int = 10
   println(anInt)
+
+
+
+
+
+
 
 }
