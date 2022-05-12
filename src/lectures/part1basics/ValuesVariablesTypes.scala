@@ -31,14 +31,18 @@ object ValuesVariablesTypes extends App {
   println(aChar)
 
 
-  // An integer
+  // An integer - integers have a range of -2^31 to 2^31-1 (-2,147,483,648 to 2,147,483,648) (4 bytes)
   val anInt: Int = 10
   println(anInt)
 
 
+  // A short - shorts have a range of -32,768 to 32,767 (2 bytes)
+  val aShort: Short = 32767
+  println(aShort)
 
 
-
+  // A Long - longs have a range of -2^63 to 2^63-1 (-9,223,372,036,854,775,808 to 9,223,372,036,854,775,808) (8 bytes)
+  val aLong: Long =
 
 
 }
