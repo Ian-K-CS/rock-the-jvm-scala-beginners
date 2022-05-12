@@ -41,10 +41,13 @@ object ValuesVariablesTypes extends App {
   println(aShort)
 
 
-  // A Long - longs have a range of -2^63 to 2^63-1 (-9,223,372,036,854,775,807 to 9,223,372,036,854,775,807) (8 bytes)
+  // A Long (requires an 'L' at the end of the value) - longs have a range of -2^63 to 2^63-1 (-9,223,372,036,854,775,807 to 9,223,372,036,854,775,807) (8 bytes)
   val aLong: Long = 9223372036854775807L
   println(aLong)
 
 
+  // A float (requires an 'f' at the end of the decmial value, otherwise recognised as a double)
+  val aFloat: Float = 5.0f
+  println(aFloat)
 
 }
