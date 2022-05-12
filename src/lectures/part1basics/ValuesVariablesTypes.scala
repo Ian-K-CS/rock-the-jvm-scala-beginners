@@ -9,26 +9,30 @@ object ValuesVariablesTypes extends App {
 
 
 
-
   val y = 45 // Compiler can infer types. IE, it knows 45 is an Int.
   println(y)
 
 
 
-
+  // String type
   val aString: String = "hello this is a string"; // Scala doesnt require semi colons.
   val anotherString: String = "goodbye"
   println(aString)
   println(anotherString)
 
-
-
+  // Boolean type
   val aBoolean: Boolean = true
   val anotherBoolean: Boolean = false
   println(aBoolean)
   println(anotherBoolean)
 
 
+  // A single char
+  val aChar: Char = 'a'
+  println(aChar)
 
+  // An integer
+  val anInt: Int = 10
+  println(anInt)
 
 }
