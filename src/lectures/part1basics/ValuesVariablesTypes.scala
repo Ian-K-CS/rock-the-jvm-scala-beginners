@@ -50,4 +50,28 @@ object ValuesVariablesTypes extends App {
   val aFloat: Float = 5.0f
   println(aFloat)
 
+
+  // A double
+  val aDouble: Double = 3.14
+  println(aDouble)
+
+
+
+  //VARIABLES
+
+  var aVariable: Int = 4
+  println(aVariable)
+
+  aVariable = 20
+  println(aVariable)
+  // VARIABLES ARE MUTEABLE
+
+
+
+
 }
+ // Questions
+ // diff between float and double?
+ // why do we explicitly define values and not?
+ // are values just constant variables?
+ // side effects?
