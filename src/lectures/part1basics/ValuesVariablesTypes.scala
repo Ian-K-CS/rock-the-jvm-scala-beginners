@@ -68,10 +68,14 @@ object ValuesVariablesTypes extends App {
 
 
 
-
 }
  // Questions
- // diff between float and double?
- // why do we explicitly define values and not?
- // are values just constant variables?
- // side effects?
+ // diff between float and double? - the size of it. Float uses 7 bits and a double uses more. normal to use doubles.
+ // why do we explicitly define values and not infer? - to make things clearer and more human readable.
+ // are values just constant variables? - Yes - hardly ever use 'var' in our codebase, we don't normally infer values
+
+ // SIDE EFFECTS - Side-effect is any external effect a function has besides its return value.
+ // A function as we know has its own scope, it’s safe if we mutate variables within its scope.
+ // We call them side-effects when it uses or changes stuff outside its scope like a variable passed by reference, global variable,
+ // reading user input from the console, logging to console, doing database operations, etc.
+ // calling a method calling another method is fine.
