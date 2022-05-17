@@ -4,8 +4,8 @@ object Expressions extends App {
 
   val x = 1 + 2 // 1 + 2 is an expression. Expressions evaluate to a value, statements do not.
   println(x)
-
   println(2 + 4 * 5 + (3 - 4)) // A math expression. Scala preserves math operator precedence (BIDMAS)
+
 
   // ARITHMETIC OPERATORS
   val a: Int = 10
@@ -17,6 +17,7 @@ object Expressions extends App {
   println(a / b) // Division
   println(a % b) // Modulo
 
+
   // RELATIONAL OPERATORS
   println("--Relational Operators--")
   println(1 == "x") // Equal
@@ -26,14 +27,26 @@ object Expressions extends App {
   println(5 >= 5) // Greater or equal to
   println(3 <= 5) // Less than or equal to
 
+
   // LOGICAL OPERATORS
   println("--Logical Operators--")
   println(!true) // Not - reverses logic state
   println(false && false) // AND - returns true if both operands are Boolean true
   println(true || false) // OR returns true of one operand is Boolean true
+  // Both && and || are short-circuit operators and will not need to evaluate both operands if the left-hand side can determine the result alone.
+
+
+  // ASSIGNMENT OPERATORS
+  println("--Assignment Operators--")
+  var c: Int = 5
+  println(c += 5) // This does add 5 to value c, but doesn't print it to 'run' - just empty brackets??????
+  c += 5 // Adds 5 to the value c
+  println(c)
 
 }
 
 
 // Questions
-// What in scala is considered truthy / falsy?
+// check line 42 - why doesn't this work ?
+//what is 'run' in intellij - is it a terminal? Ruby just printed lines to the terminal directly
+// What in scala is considered truthy / falsy? - does scala even have this?
