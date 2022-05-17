@@ -51,16 +51,21 @@ object Expressions extends App {
 
 
 
+
+
+
+
   // String interpolation examples
   val firstName = "John"
   val middleName = "S."
   val lastName =  "Smith"
 
-  val fullName = s"$firstName $middleName $lastName"
+  val fullName = s"$firstName $middleName $lastName" // Can string interpolate this way.
   println(fullName)
-  println(s"$firstName $middleName $lastName")
 
+  println(s"${firstName} ${middleName} ${lastName}") // Or like this with curly brackets - like Ruby
 
+  println(firstName + " " + middleName + " " + lastName) // Or append the Strings together - like Ruby
 
 
 }
