@@ -2,6 +2,9 @@ package lectures.part1basics
 
 object Expressions extends App {
 
+  // Statements (do something) vs Expressions (evaluate to something)
+  // EVERYTHING IN SCALA IS AN EXPRESSION!!!!
+
   val x = 1 + 2 // 1 + 2 is an expression. Expressions evaluate to a value, statements do not.
   println(x)
   println(2 + 4 * 5 + (3 - 4)) // A math expression. Scala preserves math operator precedence (BIDMAS)
@@ -40,8 +43,25 @@ object Expressions extends App {
   println("--Assignment Operators--")
   var c: Int = 5
   println(c += 5) // This does add 5 to value c, but doesn't print it to 'run' - just empty brackets??????
-  c += 5 // Adds 5 to the value c
+  c += 5 // Adds 5 to the value c - changing a variable is a side effect
   println(c)
+
+  // if in scala is an expression!
+
+
+
+
+  // String interpolation examples
+  val firstName = "John"
+  val middleName = "S."
+  val lastName =  "Smith"
+
+  val fullName = s"$firstName $middleName $lastName"
+  println(fullName)
+  println(s"$firstName $middleName $lastName")
+
+
+
 
 }
 
