@@ -120,7 +120,30 @@ object Expressions extends App {
   }
 
   println(aCodeBlock) // returns the last expression in the block as mentioned above... in this case the String "hello"
+
+
+
+  // Exercises
+  // 1. Diff between "hello world" and println("hello world")
+    // a. "hello world" is a String type, println("hello world") is a side effect (printing "hello world" to the console) and will have a return value () of Unit type
+  // 2. Whats the value of..
+
+  val someValue = {
+    2 < 3
+  }
+  // a. Boolean type, return value true
+
+  val someOtherValue = {
+    if (someValue) 239 else 986
+    42
+  }
+  // a. Int type, return value 42
+
 }
+
+
+
+
 
 
 
