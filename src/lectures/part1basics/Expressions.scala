@@ -3,7 +3,7 @@ package lectures.part1basics
 object Expressions extends App {
 
   // Statements (do something) vs Expressions (evaluate to something)
-  // EVERYTHING IN SCALA IS AN EXPRESSION!!!!
+  // Majority of things in scala are expressions, very few statements, like variable assignment and imports
 
   val x = 1 + 2 // 1 + 2 is an expression. Expressions evaluate to a value, statements do not.
   println(x)
@@ -22,7 +22,7 @@ object Expressions extends App {
 
 
   // RELATIONAL OPERATORS
-  println("--Relational Operators--")
+  println("\n--Relational Operators--")
   println(1 == "x") // Equal
   println(1 != "x") // Not equal
   println(5 > 1) // Greater than
@@ -32,7 +32,7 @@ object Expressions extends App {
 
 
   // LOGICAL OPERATORS
-  println("--Logical Operators--")
+  println("\n--Logical Operators--")
   println(!true) // Not - reverses logic state
   println(false && false) // AND - returns true if both operands are Boolean true
   println(true || false) // OR returns true of one operand is Boolean true
@@ -40,24 +40,62 @@ object Expressions extends App {
 
 
   // ASSIGNMENT OPERATORS
-  println("--Assignment Operators--")
+  println("\n--Assignment Operators--")
   var c: Int = 5
   println(c += 5) // This does add 5 to value c, but doesn't print it to 'run' - just empty brackets??????
   c += 5 // Adds 5 to the value c - changing a variable is a side effect
   println(c)
 
-  // if in scala is an expression!
 
 
+  // IF  CONSTRUCT
+  // all types of if constructs in scala are an expression - NOT a statement!
+  println("\n--if constructs--")
+  // simple if expression
+  val result1 = if (true) println("I will only print if true, 1")
+  println(result1) // this will print, but it returns () because of println above which is also printed
+
+  // it can also be written in a longer (ruby like) form
+    if (true) {
+      println("I will only print if true, 2")
+    }
+
+  // if/else expression
+  val num: Float = 3.14f
+
+  val ifResult: String = if (num.isInstanceOf[Float]) {
+    "It's equal!"
+  }
+  else {
+    "Not equal!"
+  }
+  println(ifResult)
+
+  // if/else-if/else
+  val num1 = 3
+  val num2 = 1
+
+  val result2 = if (num1 == num2) {
+    s"num1: (${num1}) is equal to num2: (${num2})"
+  } else if (num1 >= num2) {
+   s"num1: (${num1}) is greater or equal to num2: (${num2})"
+  } else {
+    s"num1: (${num1}) is less than num2: (${num2})"
+  }
+  println(result2)
 
 
-
-
+  // Scala doesn't require a ternary operator because you can save if expressions to variables
+  val num3 = 1
+  val num4 = 2
+  val ternary = if (num3 == num4) s"num3: (${num3}) is equal to num4: (${num4})" else s"num3: (${num3}) doesn't equal num4: (${num4})"
+  println(ternary)
 
 }
 
 
+
 // Questions
-// check line 42 - why doesn't this work ?
+// check line 45 - why doesn't this work ?
 // what is 'run' in intellij - is it a terminal? Ruby just printed lines to the terminal directly
 // What in scala is considered truthy / falsy? - does scala even have this?
