@@ -4,6 +4,7 @@ object Expressions extends App {
 
   // Statements (do something) vs Expressions (evaluate to something)
   // Majority of things in scala are expressions, very few statements, like variable assignment and imports
+  // side effects in scala normally return the type Unit
 
   val x = 1 + 2 // 1 + 2 is an expression. Expressions evaluate to a value, statements do not.
   println(x)
@@ -42,13 +43,13 @@ object Expressions extends App {
   // ASSIGNMENT OPERATORS
   println("\n--Assignment Operators--")
   var c: Int = 5
-  println(c += 5) // This does add 5 to value c, but doesn't print it to 'run' - just empty brackets??????
+  println(c += 5)
   c += 5 // Adds 5 to the value c - changing a variable is a side effect
   println(c)
 
 
 
-  // IF  CONSTRUCT
+  // IF CONSTRUCTS
   // all types of if constructs in scala are an expression - NOT a statement!
   println("\n--if constructs--")
   // simple if expression
@@ -91,6 +92,34 @@ object Expressions extends App {
   val ternary = if (num3 == num4) s"num3: (${num3}) is equal to num4: (${num4})" else s"num3: (${num3}) doesn't equal num4: (${num4})"
   println(ternary)
 
+  //LOOP CONSTRUCTS
+  // NEVER USE LOOPS - THEY ARE SIDE EFFECTS!
+
+  // while, do while and for
+  // while will repeat until false
+
+  // while loop example - they are side effects, it has a return value of Unit!
+  var i = 0
+  val whileLoop= while (i < 10) {
+    println(s"loop ${i}")
+    i += 1
+  }
+  println(whileLoop) // prints () which is Unit
+
+
+
+  // CODE BLOCK
+  // a code block is between 2 curly brackets
+  // code blocks are expressions
+  // THE VALUE OF THE BLOCK IS THE LAST EXPRESSION IN THE BLOCK
+  // CODEBLOCKS HAVE SCOPE, ANYTHING DEFINED WILL BE VISIBLE BY THE CODE BLOCK
+  val aCodeBlock = {
+    val y = 2
+    val z =  y + 1
+    if (z > 2) "hello" else "goodbye"
+  }
+
+  println(aCodeBlock) // returns the last expression in the block as mentioned above... in this case the String "hello"
 }
 
 
@@ -99,3 +128,5 @@ object Expressions extends App {
 // check line 45 - why doesn't this work ?
 // what is 'run' in intellij - is it a terminal? Ruby just printed lines to the terminal directly
 // What in scala is considered truthy / falsy? - does scala even have this?
+// when it comes to code blocks and variable scope - is it bad practice to name a variable used in a code block outside of said code block?
+// code blocks have return type
