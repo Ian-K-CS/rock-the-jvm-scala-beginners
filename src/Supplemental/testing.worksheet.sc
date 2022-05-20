@@ -2,6 +2,7 @@ val result = if (true) println("I will always print")
 println(result)
 println("string")
 
+"i am string"
 
 val p = ()
 val x: Unit = ()
