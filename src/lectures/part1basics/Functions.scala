@@ -21,4 +21,32 @@ object Functions extends App {
   // WHEN YOU NEED LOOPS, USE RECURSION
 
 
+
+  // You can define functions to return a Unit type, indicating it has side functions
+  def aFunctionWithSideEffects(aString: String): Unit = {
+    println(aString)
+  }
+
+
+  // Can define (and call) a function withing a function
+  def aBigFunction(n: Int): Int = {
+    def aSmallerFunction(a: Int, b: Int): Int = a + b // defining a function within a function
+
+    aSmallerFunction(n, n-1) // aBigFunction calls aSmallerFunction
+  }
+
+  println(aBigFunction(5)) // return value of 9
+
 }
+
+
+// Questions
+// 1. Why define a function within another function, why not just have two separate functions? - seems less complicated?
+// EG:
+//  def aSmallerFunction2(a: Int, b: Int): Int = a + b
+//
+//  def aBigFunction2(n: Int): Int = {
+//    aSmallerFunction2(n, n-1) // aBigFunction calls aSmallerFunction
+//  }
+//
+//  println(aBigFunction2(5)) // return value of 9
