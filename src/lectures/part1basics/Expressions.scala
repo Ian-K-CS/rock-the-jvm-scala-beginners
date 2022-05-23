@@ -93,6 +93,7 @@ object Expressions extends App {
   println(ternary)
 
   //LOOP CONSTRUCTS
+  println("\n--Loop Constructs--")
   // NEVER USE LOOPS - THEY ARE SIDE EFFECTS!
 
   // while, do while and for
@@ -100,7 +101,7 @@ object Expressions extends App {
 
   // while loop example - they are side effects, it has a return value of Unit!
   var i = 0
-  val whileLoop= while (i < 10) {
+  val whileLoop = while (i < 10) {
     println(s"loop ${i}")
     i += 1
   }
@@ -109,6 +110,7 @@ object Expressions extends App {
 
 
   // CODE BLOCK
+  println("\n--Code Block--")
   // a code block is between 2 curly brackets
   // code blocks are expressions
   // THE VALUE OF THE BLOCK IS THE LAST EXPRESSION IN THE BLOCK
