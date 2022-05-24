@@ -37,6 +37,51 @@ object Functions extends App {
 
   println(aBigFunction(5)) // return value of 9
 
+
+
+
+  // Q&A
+  // 1. Greeting function for kids - 2 params name and an age. will say "Hi, my name is xxxx" and I am age xxx years old."
+  def greeting(name: String, age: Int): String = s"Hi, my name is ${name} and I am ${age} years old."
+  println(greeting(name = "James", age = 12))
+
+  // 2. Factorial function - computes product of all numbers up to a given number. - recursive func
+  def factorialFunction(n: Int): Int = {
+    if ( n <= 0) 1
+    else n * factorialFunction(n - 1)
+  }
+  println(factorialFunction(n = 5))
+
+  // 3. Fibonacci function
+    // f(1) = 1
+    // f(2) = 1
+    // f(n) = f(n - 1) + f(n - 2)
+
+  def fibonacciSequence(n: Int): Int = {
+    if (n >= 1 && n <= 2) 1
+    else fibonacciSequence(n - 1) + fibonacciSequence(n - 2)
+  }
+
+  println(fibonacciSequence(n = 8))
+
+
+
+  // 4. Tests if a number is prime
+
+  def primeNumber(n: Int): Boolean = {
+    def isPrimeUntil(t: Int): Boolean = {
+      if (t <= 1) true
+      else n % t != 0 && isPrimeUntil(t-1)
+    }
+    isPrimeUntil(n / 2)
+  }
+
+  println(primeNumber(n = 11))
+
+
+
+
+
 }
 
 
