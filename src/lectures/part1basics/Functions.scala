@@ -78,10 +78,6 @@ object Functions extends App {
 
   println(primeNumber(n = 11))
 
-
-
-
-
 }
 
 
