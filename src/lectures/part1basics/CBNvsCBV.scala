@@ -23,5 +23,6 @@ object CBNvsCBV extends App {
   def infinite(): Int = 1 + infinite()
   def printFirst(x: Int, y: => Int): Unit = println(x)
 
-  printFirst(x = infinite(), y = 34)
+//  printFirst(x = infinite(), y = 34) // because 'x' is called by value - you get stuck in an infinite recursion loop - thus stack overflow error
+  printFirst(34, infinite()) // because 'y' is called by name - you don't get stuck in an infinite recursion loop
 }
