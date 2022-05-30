@@ -12,13 +12,11 @@ object OOBasics extends App {
   person.greet()
 
 
-
-
-
   val writer = new Writer(firstName = "Daffy", surname = "Duck", yearOfBirth = 1800)
   val imposter = new Writer(firstName = "Daffy", surname = "Duck", yearOfBirth = 1800) // why does duplicating the exact same as 'write' return false. Would expect them to be equal? Print on ln 24.
   println(writer)
   println(writer.fullName())
+
 
   val novel = new Novel(name = "Looney Toons", yearOfRelease = 1839, author = writer)
   println(novel)
@@ -28,9 +26,10 @@ object OOBasics extends App {
   println(novel.copy(revisionDate = 1805))
 
 
-
-  val counter = new Counter
-  println(counter)
+  // playing with counter class &  objects
+  val incrementCounter = new Counter(count = 20)
+  val newCounter = incrementCounter.increment(5)
+  val evenNewerCounter = newCounter.reduce(8)
 
 
 
@@ -64,6 +63,11 @@ object OOBasics extends App {
     def this(name: String) = this(name, 0)
 
   }
+
+
+
+
+
 
   /*
     Q&A
@@ -107,26 +111,59 @@ object OOBasics extends App {
 
 
   /*
+   Q&A
    2. Counter class
     - receives an int
     - method returns current count
-    - method to increment / decrement counter by 1. Returns a new Counter
+    - methods to increment / decrement counter by 1. Returns a new Counter
     - overload inc/dec methods to receive a parameter, an amount by which you inc/dec by.
   */
 
-  class Counter {
+  class Counter(val count: Int) {
 
+    // Immutability - objects are immutable in Functional Programming. If you need to change state, create a new object!!!!
+    def increment(): Counter = {
+      incrementText()
+      new Counter(count + 1)
+    }
+
+    def reduce(): Counter = {
+      reduceText()
+      new Counter(count - 1)
+    }
+
+    // overloaded methods - as asked for in the question (methods with same names, but different signatures).
+    def increment(n: Int): Counter = {
+      if (n <= 0) {
+        incrementText()
+        counterTotalText()
+        this
+      }
+      else {
+        increment().increment(n - 1)
+      }
+    }
+    def reduce(n: Int): Counter = {
+      if (n <= 0) {
+        reduceText()
+        counterTotalText()
+        this
+      }
+      else {
+        reduce().reduce(n - 1)
+      }
+    }
+
+    private def print(): Int = count
+    private def incrementText(): Unit = println(s"incrementing.. ${print()}")
+    private def reduceText(): Unit = println(s"reducing.. ${print()}")
+    private def counterTotalText(): Unit = println(s"Your new counter is at: ${count}")
 
   }
 
-
-
-
-
-
-
-
 }
+
+
 
 
 // OOP quick refresher notes
