@@ -31,6 +31,8 @@ object OOBasics extends App {
   val newCounter = incrementCounter.increment(5)
   val evenNewerCounter = newCounter.reduce(8)
 
+  // overloaded method being called to increment just by 1
+  incrementCounter.increment().increment().increment()
 
 
 
@@ -119,7 +121,7 @@ object OOBasics extends App {
     - overload inc/dec methods to receive a parameter, an amount by which you inc/dec by.
   */
 
-  class Counter(val count: Int) {
+  class Counter(val count: Int = 0) {
 
     // Immutability - objects are immutable in Functional Programming. If you need to change state, create a new object!!!!
     def increment(): Counter = {
