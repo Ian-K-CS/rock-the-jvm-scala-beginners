@@ -4,14 +4,26 @@ import scala.language.postfixOps
 
 object MethodNotations extends App {
 
-  class Person(val name: String, favoriteMovie: String) {
+  class Person(val name: String, favoriteMovie: String, val age: Int = 0) {
 
     def likes(movie: String): Boolean = movie == favoriteMovie
     def +(person: Person): String = s"${this.name} is hanging out with ${person.name}"
+    def +(nickName: String): Person = new Person (s"$name $nickName", favoriteMovie) // Q&A - 1
     def unary_! : String = s"$name, what the heck?!" // colon needs a space, otherwise compiler thinks its part of the method
+    def unary_+ : Person = new Person(name, favoriteMovie, age + 1) // Q&A - 2
     def isAlive: Boolean = true
+    def learns(language: String): String = s"$name is learning $language" // Q&A - 3
+    def learnsScala: String = learns("Scala") // Q&A - 3
     def apply(): String = s"Hi, my name is $name and I like $favoriteMovie"
+    def apply(n: Int): String = {
+      if (n <= 1) s"$name watched $favoriteMovie"
+      else {
+        println(s"$name watched $favoriteMovie")
+        apply(n - 1)
+      }
+    } // Q&A - 4
   }
+
 
 
 
@@ -49,7 +61,30 @@ object MethodNotations extends App {
 
   // apply - when the compiler sees an object being called like a function - it looks the 'apply' method!
   println(mary.apply())
-  print(mary()) // equivalent lines
+  println(mary()) // equivalent lines
+
+
+
+  // Q&A calls
+  println("\nQ&A - 1")
+  println((mary + "the rockstar")())
+
+
+  println("\nQ&A - 2")
+  println((+mary).age)
+
+  val mary1 = +mary
+  val mary2 = +mary1
+  val mary3 = +mary2
+  println(mary3.age)
+
+
+  println("\nQ&A - 3")
+  println(mary learnsScala)
+
+
+  println("\nQ&A - 4")
+  println(mary(2))
 
 }
 
@@ -58,7 +93,7 @@ object MethodNotations extends App {
   Q&A -
 
     1. Overload the + operator - receives Strings, returns nick name
-    eg: mary + "the rock star" - => new person "Mary (the rockstar)"
+    eg: mary + "the rock star" - => new person "Mary (the rockstar) and I like Inception"
 
     2. Add an age to the Person class, default 0.
     Add unary + operator - increments age by 1 => new Person with the age + 1
@@ -72,4 +107,3 @@ object MethodNotations extends App {
     mary.apply(2) => prints out "Mary watched Inception" 2 times
 
  */
-
