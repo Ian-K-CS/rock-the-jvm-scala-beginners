@@ -1,6 +1,9 @@
 package lectures.part2oop
 
-object Objects extends App {
+object Objects {
+  // A Scala application is a Scala object with this exaxct method implemented.
+  // Can write this or on line 3 .... 'object xxxxx extends App {}'
+  //  def main(args: Array[String]) { }
 
   // class level functionality - function not depending on an instance of a class
   // SCALA DOESNT KNOW CLASS LEVEL FUNCTIONALITY
@@ -12,11 +15,13 @@ object Objects extends App {
   object Person { // the only instance of its type - type being Person in this example
     // "class / static" level functionality
     val N_EYES = 2
+
     def canFly: Boolean = false
 
     def apply(name: String): Person = new Person(name)
+
     //factory method - provides interface to create objects. In this example - a new Person
-    def from(mother: Person, father: Person): Person = new Person("Bobby")
+    def apply(mother: Person, father: Person): Person = new Person("Bobby")
 
   }
 
@@ -43,9 +48,13 @@ object Objects extends App {
   println(beth == james)
 
 
-  val bobbie = Person.from(beth, james)
+  val bobbie = Person(beth, james) // Person(beth, james) is calling the apply method on the Person singleton object
   println(bobbie)
   println(bobbie.name)
+
+
+  // Scala Applications - just a scala object, with a very important / particular method ...
+  // def main(args: Array[String]): Unit
 
 }
 
